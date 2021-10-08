@@ -1,0 +1,35 @@
+<table style="width:440px; margin:0px auto;">
+	<tr>
+		<th colspan="2"><img src="../templates/img/item.png" alt="item" /> {@Banner Detailansicht}</th>
+	</tr>
+	<tr>
+		<td class="td0" colspan="2"><img src="../templates/img/b_tipp.png" alt="item" /> {@Hier können Sie die Daten des Banners anpassen}.</td>
+	</tr>
+	<tr>
+		<td class="td1">{@Banner-Name}:</td>
+		<td class="td1"><input type="text" name="name" value="{name}" style="width:305px;" /></td>
+	</tr>
+	<tr>
+		<td class="td0">{@Link-URL}:</td>
+		<td class="td0"><input type="text" name="url" value="{url}" style="width:305px;" /></td>
+	</tr>
+	<tr>
+		<td class="td1">{@Grafik-Adresse}:</td>
+		<td class="td1"><input type="text" name="img" value="{img}" style="width:305px;" /></td>
+	</tr>
+	<tr>
+		<td class="td0">{@Kurzbeschreibung}:</td>
+		<td class="td0"><input type="text" name="alt" value="{alt}" style="width:305px;" /></td>
+	</tr>
+	<tr>
+		<td class="td1">{@Kategorie}:</td>
+		<td class="td1">
+			<select name="format_id" style="width:305px;">
+				{formate}
+			</select>
+		</td>
+	</tr>
+	<tr>
+		<td class="td0" colspan="2" style="text-align:right"><input type="submit" name="submit" value="{@absenden}" /></td>
+	</tr>
+</table>

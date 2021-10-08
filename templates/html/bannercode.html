@@ -1,0 +1,55 @@
+<!-- Bannercode -->
+<div id="sitecontent">
+	<div class="info">
+		<img src="../templates/img/b_tipp.png" alt="item" /> {@Hier können Sie einen beliebigen Bannercode auswählen. Jeder beinhaltet eine eigenständige Zufallsrotation und kann mehrfach auf einer Seite eingesetzt werden.}
+	</div>
+	<br />
+	
+	<div style="text-align:center;">
+		<span style="font-size:14px; background-color:#FFFFFF; border:1px solid #DEDEDE; padding:5px; margin:0px auto;">
+			<b>{@Kategorie}:</b> {formate} <a href="#" onclick="dropFormat({format_id});"><img src="../templates/img/b_minus.png" alt="drop" width="9" height="9" /></a> <a href="?action=neuesformat"><img src="../templates/img/b_plus.png" alt="add" width="9" height="9" /></a>
+		</span>
+	</div>
+	<br />
+	
+	<table class="table">
+		<tr>
+			<th><b>{@Bannercode - HTML Iframe}</b></th>
+		</tr>
+		<tr>
+			<td style="background-color:#EFEFEF;"><img src="../templates/img/b_tipp.png" alt="item" /> {@Der klassische Iframe Code lässt sich in jeder HTML Seite unterbringen.}</td>
+		</tr>
+		<tr>
+			<td><textarea cols="50" rows="4" class="bannercode">&lt;iframe id="bcode{rand}" src="{scriptpath}/view.php?cid={format_id}" width="{width}" height="{height}" marginwidth="0" marginheight="0" frameborder="0" scrolling="no"&gt;&lt;/iframe&gt;</textarea></td>
+		</tr>
+	</table>
+	<br />
+	
+	<table class="table">
+		<tr>
+			<th><b>{@Bannercode - HTML Image}</b></th>
+		</tr>
+		<tr>
+			<td style="background-color:#EFEFEF;"><img src="../templates/img/b_tipp.png" alt="item" /> {@Mit HTML-Image kann ein dynamischer Bannercode in jede HTML Seite integriert werden.}</td>
+		</tr>
+		<tr>
+			<td><textarea cols="50" rows="4" class="bannercode">&lt;a href="{scriptpath}/go.php?rid={rand}" target="_blank"&gt;&lt;img src="{scriptpath}/view.php?get=image&amp;amp;cid={format_id}&amp;amp;rid={rand}" style="width:{width}px; height:{height}px; border:0;" alt="bannercode" /&gt;&lt;/a&gt;</textarea></td>
+		</tr>
+	</table>
+	<br />
+	
+	<table class="table">
+		<tr>
+			<th><b>{@Bannercode - PHP Include}</b></th>
+		</tr>
+		<tr>
+			<td style="background-color:#EFEFEF;"><img src="../templates/img/b_tipp.png" alt="item" /> {@Dieses PHP Script lässt sich in bestehende PHP-Programme integrieren und erzeugt so beim Aufruf einen Banner.}</td>
+		</tr>
+		<tr>
+			<td><textarea cols="50" rows="4" class="bannercode">&lt;?php echo(file_get_contents("{scriptpath}/view.php?get=php&amp;ip={$_SERVER["REMOTE_ADDR"]}&amp;cid={format_id}"));?&gt;</textarea></td>
+		</tr>
+	</table>
+</div>
+
+<!-- Menü einfärben -->
+<script> highlightNav('mnuBannercode'); </script>

@@ -1,0 +1,38 @@
+<!-- Banner eintragen -->
+<div id="sitecontent">
+	<form action="./?action=bannercodeeintragen&amp;noheader=true" method="post">
+	<table style="width:440px;margin:0px auto;">
+		<tr>
+			<th colspan="2"><img src="../templates/img/item.png" alt="item" /> {@Bannercode eintragen}</th>
+		</tr>
+		<tr>
+			<td class="td0" colspan="2">
+				<div><img src="../templates/img/b_tipp.png" alt="item" /> {@Tragen Sie einen Bannercode in die Rotation mit dem ausgewählten Format ein. Bitte füllen Sie dabei alle Felder aus.}</div><br />
+				<div><img src="../templates/img/s_warn.png" alt="item" /> <b>{@Bitte überprüfen Sie jeden Bannercode vor dem Eintragen, da dieser ungefiltert ausgegeben wird und Sicherheitsrisiken mit sich bringen kann. Wenn Sie nicht sicher sind, nutzen Sie bitte die} <a href="?action=bannereintragen"><u>{@sichere Variante}</u></a> {@oder erkundigen sich beim Betreiber des Bannercodes}.</b></div>
+			</td>
+		</tr>		
+		<tr>
+			<td class="td1">{@Banner-Name}:</td>
+			<td class="td1"><input type="text" name="name" value="{name}" style="width:305px;" /></td>
+		</tr>
+		<tr>
+			<td class="td0">{@Bannercode}:</td>
+			<td class="td0"><textarea name="code" style="width: 305px; height: 150px;">{code}</textarea></td>
+		</tr>
+		<tr>
+			<td class="td1">{@Kategorie}:</td>
+			<td class="td1">
+				<select name="format" style="width:305px;">
+					{formate}
+				</select>
+			</td>
+		</tr>
+		<tr>
+			<td class="td0" colspan="2" style="text-align:right;"><input type="submit" name="submit" value="{@absenden}" /></td>
+		</tr>
+	</table>
+	</form>
+</div>
+
+<!-- Menü einfärben -->
+<script> highlightNav('mnuBannereintragen'); </script>

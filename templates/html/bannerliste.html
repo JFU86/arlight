@@ -1,0 +1,29 @@
+<!-- Bannerliste -->
+<div id="sitecontent">
+	<div style="text-align:center;">
+		<span style="font-size:14px; background-color:#FFFFFF; border:1px solid #DEDEDE; padding:5px; margin:0px auto;">
+			<b>{@Kategorie}:</b> {formate} <a href="#" onclick="dropFormat({format_id});"><img src="../templates/img/b_minus.png" alt="drop" width="9" height="9" /></a> <a href="?action=neuesformat"><img src="../templates/img/b_plus.png" alt="add" width="9" height="9" /></a>
+		</span>
+	</div>	
+	<br />
+	
+	<table style="width:99%;margin:0px auto;">
+		<tr>
+			<th style="width:65px;">{@Optionen}</th>
+			<th>{@Name}</th>
+			<th><a href="./?action=bannerliste&amp;order=asc"><img src="../templates/img/s_asc.png" alt="item" /></a><a href="./?action=bannerliste&amp;order=desc"><img src="../templates/img/s_desc.png" alt="item" /></a> {@Banner}</th>
+			<th style="width:90px;">VCR</th>
+		</tr>
+		{bannerliste}
+	</table>
+	<br />
+	<div style="text-align:left;padding-left:5px;">
+		<b>{@Legende}:</b><br />
+		<img src="../templates/img/c.png" alt="bannercode" /> = {@Banner mit Bannercode}<br />
+		* {@Banner mit rotem Namen sind inaktiv}
+	</div>
+</div>
+
+<!-- Menü einfärben -->
+<script> highlightNav('mnuBannerliste'); </script>
+

@@ -1,0 +1,1 @@
+REPLACE INTO `settings` (`config_name`, `config_value`) VALUES ('Arlight.dbVersion', '1500');

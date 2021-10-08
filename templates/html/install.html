@@ -1,0 +1,121 @@
+<div style="text-align:center;margin-top:10px;">
+	<h1>Installation</h1>
+	
+	<div class="install">
+	<table style="width:100%;">
+		<tr>
+			<th class="login" colspan="2">Installation requirements</th>
+		</tr>
+		<tr>
+			<td><b>PHP &gt;= 5.3.3</b></td>
+			<td><img src="../templates/img/{img_phpversion}" alt="process" /> {phpversion}</td>
+		</tr>
+		<tr>
+			<td><b>SQLite &gt;= 3.6.0</b></td>
+			<td><img src="../templates/img/{img_sqliteversion}" alt="process" /> {sqliteversion}</td>
+		</tr>
+		<tr>
+			<td><b>PHP "safe_mode" = Off</b></td>
+			<td><img src="../templates/img/{img_safemode}" alt="process" /> {safemode}</td>
+		</tr>
+		<tr>
+			<td><b>Files writable (CHMOD)</b><br />
+			<img src="../templates/img/b_tipp.png" width="16" height="16" alt="tip" /> The base folder, /system and all its subfolders must be writable!</td>
+			<td style="width:70px;"><img src="../templates/img/{img_writable}" alt="process" /> {writable}</td>
+		</tr>
+	</table>
+	</div>
+	
+	<br />
+	
+	<div class="install" id="admin_registration" style="margin:0px auto;">
+		
+		<form action="install.php" method="post">
+		<input type="hidden" name="noheader" value="true" />
+		<table style="width:100%;">
+			<tr>
+				<th class="login" colspan="2">Configuration</th>
+			</tr>
+			<tr>
+				<td>Administrator Name:</td>
+				<td><input type="text" name="username" value="admin" style="width:220px;" /></td>
+			</tr>
+			<tr>
+				<td>Administrator Password:</td>
+				<td><input type="password" name="pass0" autocomplete="off" style="width:220px;" /></td>
+			</tr>
+			<tr>
+				<td>Retype Password:</td>
+				<td><input type="password" name="pass1" autocomplete="off" style="width:220px;" /></td>
+			</tr>
+			<tr>
+				<td>Database:</td>
+				<td>
+					<select id="database" name="database" style="width:224px;">
+						{option_sqlite3}
+						{option_mysql}
+					</select>
+				</td>
+			</tr>
+			<tr>
+				<td>Language:</td>
+				<td>
+					<select name="language" style="width:224px;">
+						<option value="de">(de) Deutsch</option>
+						<option value="en">(en) English</option>
+					</select>
+				</td>
+			</tr>
+			
+			<tr id="databaseConfiguration0">
+				<th class="login" colspan="2">Database Configuration</th>
+			</tr>
+			<tr id="databaseConfiguration1">
+				<td class="login">Database Hostname:</td>
+				<td class="login"><input type="text" name="db_hostname" value="localhost" autocomplete="off" style="width:220px;" /></td>
+			</tr>		
+			<tr id="databaseConfiguration2">
+				<td class="login">Database Name:</td>
+				<td class="login"><input type="text" name="db_database" autocomplete="off" style="width:220px;" /></td>
+			</tr>		
+			<tr id="databaseConfiguration3">
+				<td class="login">Database Username:</td>
+				<td class="login"><input type="text" name="db_username" autocomplete="off" style="width:220px;" /></td>
+			</tr>		
+			<tr id="databaseConfiguration4">
+				<td class="login">Database Password:</td>
+				<td class="login"><input type="password" name="db_userpass" autocomplete="off" style="width:220px;" /></td>
+			</tr>		
+			<tr id="databaseConfiguration5">
+				<td class="login">Database Port:</td>
+				<td class="login"><input type="text" name="db_port" autocomplete="off" style="width:220px;" value="3306" /></td>
+			</tr>		
+			<tr id="databaseConfiguration6">
+				<td class="login">Database Socket:</td>
+				<td class="login"><input type="text" name="db_socket" autocomplete="off" style="width:220px;" /></td>
+			</tr>
+			
+			<tr>
+				<td colspan="2" style="text-align:right;"><input id="submit" name="submit" type="submit" value="install" /></td>
+			</tr>
+		</table>
+		</form>
+	</div>
+</div>
+
+{script}
+<script>
+	function showDatabaseConfiguration()
+	{
+		for (var i = 0; i < 7; i++) {
+			$('databaseConfiguration' + i).style.display = 'table-row';
+		}
+	}
+	function hideDatabaseConfiguration()
+	{
+		for (var i = 0; i < 7; i++) {
+			$('databaseConfiguration' + i).style.display = 'none';
+		}
+	}
+	window.addEvent('domready', function() { if ($('database').value == 'Sqlite' || $('database').value == '') { hideDatabaseConfiguration(); }});
+</script>
